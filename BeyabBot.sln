@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeyabBot", "BeyabBot\BeyabBot.csproj", "{3E671D9E-BAB7-4959-98DA-801B2B882CA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{0017B6D6-F07E-433C-8F93-3120C0D9A5F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E671D9E-BAB7-4959-98DA-801B2B882CA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E671D9E-BAB7-4959-98DA-801B2B882CA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E671D9E-BAB7-4959-98DA-801B2B882CA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E671D9E-BAB7-4959-98DA-801B2B882CA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0017B6D6-F07E-433C-8F93-3120C0D9A5F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0017B6D6-F07E-433C-8F93-3120C0D9A5F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0017B6D6-F07E-433C-8F93-3120C0D9A5F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0017B6D6-F07E-433C-8F93-3120C0D9A5F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C2032E03-3711-470F-9891-A36133B30F19}
+	EndGlobalSection
+EndGlobal
