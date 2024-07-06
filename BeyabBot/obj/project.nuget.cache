@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "DpwRTharSza7+ensp/9fc/mSPpp8TMThRNawA08BZHHIXZ1/GHRHpYvRLXkScLZN3+69zQlJ+hBaLfJgH4Xz5w==",
+  "dgSpecHash": "oEe6l6JIaUYWKxeB+jWXZvknDpz6KS/arV2dJA6rCiu16ohyqsK85H0sxW5VvqmU+7ozBRTaqRc5dpCundl8XQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mehdd\\source\\repos\\BeyabBot\\BeyabBot\\BeyabBot.csproj",
+  "projectFilePath": "D:\\Beyab\\BeyabBot\\BeyabBot.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\mehdd\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
-    "C:\\Users\\mehdd\\.nuget\\packages\\jetbrains.annotations\\2022.1.0\\jetbrains.annotations.2022.1.0.nupkg.sha512"
+    "C:\\Users\\Stocknew1\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\Stocknew1\\.nuget\\packages\\jetbrains.annotations\\2022.1.0\\jetbrains.annotations.2022.1.0.nupkg.sha512"
   ],
   "logs": []
 }

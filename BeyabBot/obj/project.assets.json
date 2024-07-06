@@ -8,12 +8,20 @@
           "System.ComponentModel.DataAnnotations"
         ],
         "compile": {
-          "lib/net45/EntityFramework.SqlServer.dll": {},
-          "lib/net45/EntityFramework.dll": {}
+          "lib/net45/EntityFramework.SqlServer.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/EntityFramework.dll": {
+            "related": ".SqlServer.xml;.xml"
+          }
         },
         "runtime": {
-          "lib/net45/EntityFramework.SqlServer.dll": {},
-          "lib/net45/EntityFramework.dll": {}
+          "lib/net45/EntityFramework.SqlServer.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/EntityFramework.dll": {
+            "related": ".SqlServer.xml;.xml"
+          }
         },
         "build": {
           "buildTransitive/EntityFramework.props": {},
@@ -23,10 +31,14 @@
       "JetBrains.Annotations/2022.1.0": {
         "type": "package",
         "compile": {
-          "lib/net20/JetBrains.Annotations.dll": {}
+          "lib/net20/JetBrains.Annotations.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net20/JetBrains.Annotations.dll": {}
+          "lib/net20/JetBrains.Annotations.dll": {
+            "related": ".xml"
+          }
         }
       },
       "DataLayer/1.0.0": {
@@ -51,12 +63,20 @@
           "System.ComponentModel.DataAnnotations"
         ],
         "compile": {
-          "lib/net45/EntityFramework.SqlServer.dll": {},
-          "lib/net45/EntityFramework.dll": {}
+          "lib/net45/EntityFramework.SqlServer.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/EntityFramework.dll": {
+            "related": ".SqlServer.xml;.xml"
+          }
         },
         "runtime": {
-          "lib/net45/EntityFramework.SqlServer.dll": {},
-          "lib/net45/EntityFramework.dll": {}
+          "lib/net45/EntityFramework.SqlServer.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/EntityFramework.dll": {
+            "related": ".SqlServer.xml;.xml"
+          }
         },
         "build": {
           "buildTransitive/EntityFramework.props": {},
@@ -66,10 +86,69 @@
       "JetBrains.Annotations/2022.1.0": {
         "type": "package",
         "compile": {
-          "lib/net20/JetBrains.Annotations.dll": {}
+          "lib/net20/JetBrains.Annotations.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net20/JetBrains.Annotations.dll": {}
+          "lib/net20/JetBrains.Annotations.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DataLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.2",
+        "dependencies": {
+          "EntityFramework": "6.4.4",
+          "JetBrains.Annotations": "2022.1.0"
+        },
+        "compile": {
+          "bin/placeholder/DataLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataLayer.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.2/win-arm64": {
+      "EntityFramework/6.4.4": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/EntityFramework.dll": {
+            "related": ".SqlServer.xml;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/EntityFramework.dll": {
+            "related": ".SqlServer.xml;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/EntityFramework.props": {},
+          "buildTransitive/EntityFramework.targets": {}
+        }
+      },
+      "JetBrains.Annotations/2022.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net20/JetBrains.Annotations.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net20/JetBrains.Annotations.dll": {
+            "related": ".xml"
+          }
         }
       },
       "DataLayer/1.0.0": {
@@ -94,12 +173,20 @@
           "System.ComponentModel.DataAnnotations"
         ],
         "compile": {
-          "lib/net45/EntityFramework.SqlServer.dll": {},
-          "lib/net45/EntityFramework.dll": {}
+          "lib/net45/EntityFramework.SqlServer.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/EntityFramework.dll": {
+            "related": ".SqlServer.xml;.xml"
+          }
         },
         "runtime": {
-          "lib/net45/EntityFramework.SqlServer.dll": {},
-          "lib/net45/EntityFramework.dll": {}
+          "lib/net45/EntityFramework.SqlServer.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/EntityFramework.dll": {
+            "related": ".SqlServer.xml;.xml"
+          }
         },
         "build": {
           "buildTransitive/EntityFramework.props": {},
@@ -109,10 +196,14 @@
       "JetBrains.Annotations/2022.1.0": {
         "type": "package",
         "compile": {
-          "lib/net20/JetBrains.Annotations.dll": {}
+          "lib/net20/JetBrains.Annotations.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net20/JetBrains.Annotations.dll": {}
+          "lib/net20/JetBrains.Annotations.dll": {
+            "related": ".xml"
+          }
         }
       },
       "DataLayer/1.0.0": {
@@ -137,12 +228,20 @@
           "System.ComponentModel.DataAnnotations"
         ],
         "compile": {
-          "lib/net45/EntityFramework.SqlServer.dll": {},
-          "lib/net45/EntityFramework.dll": {}
+          "lib/net45/EntityFramework.SqlServer.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/EntityFramework.dll": {
+            "related": ".SqlServer.xml;.xml"
+          }
         },
         "runtime": {
-          "lib/net45/EntityFramework.SqlServer.dll": {},
-          "lib/net45/EntityFramework.dll": {}
+          "lib/net45/EntityFramework.SqlServer.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/EntityFramework.dll": {
+            "related": ".SqlServer.xml;.xml"
+          }
         },
         "build": {
           "buildTransitive/EntityFramework.props": {},
@@ -152,10 +251,14 @@
       "JetBrains.Annotations/2022.1.0": {
         "type": "package",
         "compile": {
-          "lib/net20/JetBrains.Annotations.dll": {}
+          "lib/net20/JetBrains.Annotations.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net20/JetBrains.Annotations.dll": {}
+          "lib/net20/JetBrains.Annotations.dll": {
+            "related": ".xml"
+          }
         }
       },
       "DataLayer/1.0.0": {
@@ -268,42 +371,42 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mehdd\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Stocknew1\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mehdd\\source\\repos\\BeyabBot\\BeyabBot\\BeyabBot.csproj",
+      "projectUniqueName": "D:\\Beyab\\BeyabBot\\BeyabBot.csproj",
       "projectName": "BeyabBot",
-      "projectPath": "C:\\Users\\mehdd\\source\\repos\\BeyabBot\\BeyabBot\\BeyabBot.csproj",
-      "packagesPath": "C:\\Users\\mehdd\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mehdd\\source\\repos\\BeyabBot\\BeyabBot\\obj\\",
+      "projectPath": "D:\\Beyab\\BeyabBot\\BeyabBot.csproj",
+      "packagesPath": "C:\\Users\\Stocknew1\\.nuget\\packages\\",
+      "outputPath": "D:\\Beyab\\BeyabBot\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\mehdd\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Stocknew1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net472"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net472": {
           "projectReferences": {
-            "C:\\Users\\mehdd\\source\\repos\\BeyabBot\\DataLayer\\DataLayer.csproj": {
-              "projectPath": "C:\\Users\\mehdd\\source\\repos\\BeyabBot\\DataLayer\\DataLayer.csproj"
+            "D:\\Beyab\\DataLayer\\DataLayer.csproj": {
+              "projectPath": "D:\\Beyab\\DataLayer\\DataLayer.csproj"
             }
           }
         }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -322,6 +425,9 @@
     },
     "runtimes": {
       "win": {
+        "#import": []
+      },
+      "win-arm64": {
         "#import": []
       },
       "win-x64": {

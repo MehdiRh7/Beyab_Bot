@@ -1,42 +1,43 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mehdd\\source\\repos\\BeyabBot\\BeyabBot\\BeyabBot.csproj": {}
+    "D:\\Beyab\\BeyabBot\\BeyabBot.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mehdd\\source\\repos\\BeyabBot\\BeyabBot\\BeyabBot.csproj": {
+    "D:\\Beyab\\BeyabBot\\BeyabBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mehdd\\source\\repos\\BeyabBot\\BeyabBot\\BeyabBot.csproj",
+        "projectUniqueName": "D:\\Beyab\\BeyabBot\\BeyabBot.csproj",
         "projectName": "BeyabBot",
-        "projectPath": "C:\\Users\\mehdd\\source\\repos\\BeyabBot\\BeyabBot\\BeyabBot.csproj",
-        "packagesPath": "C:\\Users\\mehdd\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mehdd\\source\\repos\\BeyabBot\\BeyabBot\\obj\\",
+        "projectPath": "D:\\Beyab\\BeyabBot\\BeyabBot.csproj",
+        "packagesPath": "C:\\Users\\Stocknew1\\.nuget\\packages\\",
+        "outputPath": "D:\\Beyab\\BeyabBot\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\mehdd\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Stocknew1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net472"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net472": {
             "projectReferences": {
-              "C:\\Users\\mehdd\\source\\repos\\BeyabBot\\DataLayer\\DataLayer.csproj": {
-                "projectPath": "C:\\Users\\mehdd\\source\\repos\\BeyabBot\\DataLayer\\DataLayer.csproj"
+              "D:\\Beyab\\DataLayer\\DataLayer.csproj": {
+                "projectPath": "D:\\Beyab\\DataLayer\\DataLayer.csproj"
               }
             }
           }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -55,6 +56,9 @@
       },
       "runtimes": {
         "win": {
+          "#import": []
+        },
+        "win-arm64": {
           "#import": []
         },
         "win-x64": {
@@ -65,35 +69,36 @@
         }
       }
     },
-    "C:\\Users\\mehdd\\source\\repos\\BeyabBot\\DataLayer\\DataLayer.csproj": {
+    "D:\\Beyab\\DataLayer\\DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mehdd\\source\\repos\\BeyabBot\\DataLayer\\DataLayer.csproj",
+        "projectUniqueName": "D:\\Beyab\\DataLayer\\DataLayer.csproj",
         "projectName": "DataLayer",
-        "projectPath": "C:\\Users\\mehdd\\source\\repos\\BeyabBot\\DataLayer\\DataLayer.csproj",
-        "packagesPath": "C:\\Users\\mehdd\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mehdd\\source\\repos\\BeyabBot\\DataLayer\\obj\\",
+        "projectPath": "D:\\Beyab\\DataLayer\\DataLayer.csproj",
+        "packagesPath": "C:\\Users\\Stocknew1\\.nuget\\packages\\",
+        "outputPath": "D:\\Beyab\\DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\mehdd\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Stocknew1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net472"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net472": {
             "projectReferences": {}
           }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -112,6 +117,9 @@
       },
       "runtimes": {
         "win": {
+          "#import": []
+        },
+        "win-arm64": {
           "#import": []
         },
         "win-x64": {

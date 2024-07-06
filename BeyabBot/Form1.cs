@@ -3347,116 +3347,102 @@ namespace BeyabBot
                                     SqlTransaction objTrans = null;
                                     var chatid1 = chatId;
                                     var chatid2 = chatId;
+
                                     using (SqlConnection objConn = new SqlConnection(strConnString))
                                     {
                                         objConn.Open();
                                         objTrans = objConn.BeginTransaction();
-                                        if (person.Any(p => p.chatid == from.Id))
+
+                                        try
                                         {
-                                            foreach (Person per in person)
+                                            if (person.Any(p => p.chatid == from.Id))
                                             {
-                                                if (per.chatid == from.Id)
+                                                foreach (Person per in person)
                                                 {
-
-                                                    if (per.CommandName == "BeCancelledKeyboard")
+                                                    if (per.chatid == from.Id)
                                                     {
-
-                                                        per.CommandName = "AfterCancelledKeyboard";
-                                                        _personRepository.UpdatePerson(per);
-                                                        _personRepository.Save();
-
-
-                                                        if (online.Any(o => o.PersonId == per.PersonId))
+                                                        if (per.CommandName == "BeCancelledKeyboard")
                                                         {
-                                                            foreach (Onlines o in online)
+                                                            per.CommandName = "AfterCancelledKeyboard";
+
+                                                            // Update Person.CommandName in database
+                                                            using (SqlCommand updatePersonCmd = new SqlCommand($"UPDATE People SET CommandName='AfterCancelledKeyboard' WHERE chatid={per.chatid};", objConn, objTrans))
                                                             {
-                                                                if (o.PersonId == per.PersonId)
-                                                                {
-
-                                                                    SqlCommand objCmd1 = new SqlCommand($"DELETE FROM Onlines WHERE OnlineID={o.OnlineID};", objConn);
-                                                                    
-
-                                                                    chatid1 = o.chatid;
-                                                                    try
-                                                                    {
-                                                                        objCmd1.ExecuteNonQuery();
-
-                                                                        objTrans.Commit();
-                                                                    }
-                                                                    catch (Exception)
-                                                                    {
-                                                                        objTrans.Rollback();
-                                                                    }
-                                                                    finally
-                                                                    {
-                                                                        objConn.Close();
-                                                                    }
-                                                                }
-                                                                if (o.User2 == from.Id)
-                                                                {
-
-                                                                    per.LastUser = o.Person.chatid;
-                                                                    _personRepository.UpdatePerson(per);
-
-                                                                    o.Person.CommandName = "AfterCancelledKeyboard";
-                                                                    o.Person.LastUser = chatId;
-                                                                    _onlinesRepository.UpdateOnline(o);
-
-                                                                    SqlCommand objCmd2 = new SqlCommand($"DELETE FROM Onlines WHERE OnlineID={o.OnlineID};", objConn);
-
-                                                                    chatid2 = o.chatid;
-                                                                    try
-                                                                    {
-                                                                        objCmd2.ExecuteNonQuery();
-
-                                                                        objTrans.Commit();
-                                                                    }
-                                                                    catch (Exception)
-                                                                    {
-                                                                        objTrans.Rollback();
-                                                                    }
-                                                                    finally
-                                                                    {
-                                                                        objConn.Close();
-                                                                    }
-
-                                                                }
-
-                                                                
+                                                                updatePersonCmd.ExecuteNonQuery();
                                                             }
 
+                                                            if (online.Any(o => o.PersonId == per.PersonId))
+                                                            {
+                                                                foreach (Onlines o in online)
+                                                                {
+                                                                    if (o.PersonId == per.PersonId)
+                                                                    {
+                                                                        using (SqlCommand objCmd1 = new SqlCommand($"DELETE FROM Onlines WHERE OnlineID={o.OnlineID};", objConn, objTrans))
+                                                                        {
+                                                                            chatid1 = o.chatid;
+                                                                            objCmd1.ExecuteNonQuery();
+                                                                        }
+                                                                    }
+
+                                                                    if (o.User2 == from.Id)
+                                                                    {
+                                                                        per.LastUser = o.Person.chatid;
+
+                                                                        // Update Person.LastUser in database
+                                                                        using (SqlCommand updatePersonLastUserCmd = new SqlCommand($"UPDATE People SET LastUser={o.Person.chatid} WHERE chatid={per.chatid};", objConn, objTrans))
+                                                                        {
+                                                                            updatePersonLastUserCmd.ExecuteNonQuery();
+                                                                        }
+
+                                                                        o.Person.CommandName = "SearchKeyboard";
+                                                                        o.Person.LastUser = chatId;
+
+                                                                        // Update Onlines.Person.CommandName and LastUser in database
+                                                                        using (SqlCommand updateOnlineCmd = new SqlCommand($"UPDATE People SET CommandName='SearchKeyboard', LastUser={chatId} WHERE chatid={o.Person.chatid};", objConn, objTrans))
+                                                                        {
+                                                                            updateOnlineCmd.ExecuteNonQuery();
+                                                                        }
+
+                                                                        using (SqlCommand objCmd2 = new SqlCommand($"DELETE FROM Onlines WHERE OnlineID={5};", objConn, objTrans))
+                                                                        {
+                                                                            chatid2 = o.chatid;
+                                                                            int rowsAffected = objCmd2.ExecuteNonQuery();
+                                                                            if (rowsAffected == 0)
+                                                                            {
+                                                                                throw new Exception("No rows were deleted, rollback initiated.");
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+
+                                                            StringBuilder sb1 = new StringBuilder();
+                                                            sb1.AppendLine("<b>صحبت رو قطع کردی حالا چه کاری برات انجام بدم؟😆</b>");
+                                                            await bot.SendTextMessageAsync(chatid1, sb1.ToString(), ParseMode.Html, null, false, false, 0, false, AfterCancelledKeyboard);
+
+                                                            StringBuilder sb2 = new StringBuilder();
+                                                            sb2.AppendLine("<b>کاربر از چت خارج شد حالا چه کاری برات انجام بدم؟</b>");
+                                                            await bot.SendTextMessageAsync(chatid2, sb2.ToString(), ParseMode.Html, null, false, false, 0, false, SearchKeyboard);
+
+                                                            objTrans.Commit();
+                                                        }
+                                                        else
+                                                        {
+                                                            await WhichKeyboard(up, online, chatId, per);
                                                         }
                                                     }
-                                                    else
-                                                    {
-                                                        await WhichKeyboard(up, online, chatId, per);
-                                                    }
-
-
-
-
                                                 }
                                             }
-                                            db.SaveChanges();
-
-                                            StringBuilder sbABC = new StringBuilder();
-                                            sbABC.AppendLine("<b>صحبت رو قطع کردی حالا چه کاری برات انجام بدم؟\U0001F606</b>");
-                                            await bot.SendTextMessageAsync(chatid1, sbABC.ToString(), ParseMode.Html, null, false, false, 0, false, AfterCancelledKeyboard);
-
-                                            StringBuilder sbABC2 = new StringBuilder();
-                                            sbABC2.AppendLine("<b>کاربر از چت خارج شد حالا چه کاری برات انجام بدم؟</b>");
-                                            await bot.SendTextMessageAsync(chatid2, sbABC2.ToString(), ParseMode.Html, null, false, false, 0, false, AfterCancelledKeyboard);
-
                                         }
-
-                                        var newOnline = _onlinesRepository.GetAllOnlines().Where(o => o.chatid == chatId || o.User2 == chatId);
-                                        if (newOnline.Count() == 0)
+                                        catch (Exception ex)
                                         {
-                                            break;
+                                            objTrans.Rollback();
+                                            Console.WriteLine($"Error: {ex.Message}");
                                         }
                                     }
-
                                 }
+
+
 
 
                                 //***************************************************************************************************************************************************
