@@ -39,9 +39,16 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="Telegram.Bot">
+      <HintPath>..\BeyabBot\Telegram.Bot.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\BeyabContext.cs" />
+    <Compile Include="HandlersServices\CallbackHandler.cs" />
+    <Compile Include="HandlersServices\MessageHandler.cs" />
+    <Compile Include="Handlers\ICallbackHandler.cs" />
+    <Compile Include="Handlers\IMessageHandler.cs" />
     <Compile Include="Migrations\202208210008528_create2.cs" />
     <Compile Include="Migrations\202208210008528_create2.designer.cs">
       <DependentUpon>202208210008528_create2.cs</DependentUpon>
@@ -71,10 +78,12 @@
     <Compile Include="Repository\IPersonRepository.cs" />
     <Compile Include="Repository\IValidationRepository.cs" />
     <Compile Include="Services\BlockRepository.cs" />
+    <Compile Include="Services\BotRunner.cs" />
     <Compile Include="Services\FriendRepository.cs" />
     <Compile Include="Services\OnlinesRepository.cs" />
     <Compile Include="Services\PersonRepository.cs" />
     <Compile Include="Services\ValidationRepository.cs" />
+    <Compile Include="Utilities\KeyboardProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="EntityFramework">

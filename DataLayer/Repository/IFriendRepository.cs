@@ -8,11 +8,11 @@ namespace DataLayer
 {
     public interface IFriendRepository:IDisposable
     {
-        IEnumerable<FriendsList> GetAllFriendList();
+        IQueryable<FriendsList> GetAllFriendList();
         bool InsertFriend(FriendsList friend);
         bool DeleteFriend(int friendId);
         bool DeleteFriend(FriendsList friend);
         bool UpdateFriend(FriendsList friend);
-        void Save();
+        Task Save();
     }
 }

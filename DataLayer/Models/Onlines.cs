@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace DataLayer
         public long User2 { get; set; }
         public long chatid { get; set; }
 
+        [ForeignKey("PersonId")]
         public virtual Person Person { get; set; }
     }
 }

@@ -14,9 +14,9 @@ namespace DataLayer
         {
             this.db = context;
         }
-        public IEnumerable<Person> GetAllPerson()
+        public IQueryable<Person> GetAllPerson()
         {
-            return db.Person.ToList();
+            return db.Person.AsQueryable();
         }
 
         public Person GetPersonById(int id)
@@ -76,9 +76,9 @@ namespace DataLayer
             }
         }
 
-        public void Save()
+        public async Task Save()
         {
-            db.SaveChanges();
+            await db.SaveChangesAsync();
         }
 
         public void Dispose()

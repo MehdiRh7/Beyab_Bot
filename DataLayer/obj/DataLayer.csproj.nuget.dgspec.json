@@ -1,21 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Beyab\\DataLayer\\DataLayer.csproj": {}
+    "C:\\Users\\Mehdi Rh\\source\\repos\\Beyab_Bot\\Beyab_Bot\\DataLayer\\DataLayer.csproj": {}
   },
   "projects": {
-    "D:\\Beyab\\DataLayer\\DataLayer.csproj": {
+    "C:\\Users\\Mehdi Rh\\source\\repos\\Beyab_Bot\\Beyab_Bot\\DataLayer\\DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Beyab\\DataLayer\\DataLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Mehdi Rh\\source\\repos\\Beyab_Bot\\Beyab_Bot\\DataLayer\\DataLayer.csproj",
         "projectName": "DataLayer",
-        "projectPath": "D:\\Beyab\\DataLayer\\DataLayer.csproj",
-        "packagesPath": "C:\\Users\\Stocknew1\\.nuget\\packages\\",
-        "outputPath": "D:\\Beyab\\DataLayer\\obj\\",
+        "projectPath": "C:\\Users\\Mehdi Rh\\source\\repos\\Beyab_Bot\\Beyab_Bot\\DataLayer\\DataLayer.csproj",
+        "packagesPath": "C:\\Users\\Mehdi Rh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mehdi Rh\\source\\repos\\Beyab_Bot\\Beyab_Bot\\DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
+        "UsingMicrosoftNETSdk": false,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Stocknew1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mehdi Rh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

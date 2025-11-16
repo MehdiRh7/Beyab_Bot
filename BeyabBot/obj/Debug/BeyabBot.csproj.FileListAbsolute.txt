@@ -42,3 +42,29 @@ D:\Beyab\BeyabBot\obj\Debug\BeyabBot.csproj.CoreCompileInputs.cache
 D:\Beyab\BeyabBot\obj\Debug\BeyabBot.csproj.Up2Date
 D:\Beyab\BeyabBot\obj\Debug\BeyabBot.exe
 D:\Beyab\BeyabBot\obj\Debug\BeyabBot.pdb
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\BeyabBot\obj\Debug\BeyabBot.csproj.AssemblyReference.cache
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\BeyabBot\obj\Debug\BeyabBot.csproj.SuggestedBindingRedirects.cache
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\BeyabBot\obj\Debug\BeyabBot.exe.config
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\BeyabBot\obj\Debug\BeyabBot.Form1.resources
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\BeyabBot\obj\Debug\BeyabBot.Properties.Resources.resources
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\BeyabBot\obj\Debug\BeyabBot.csproj.GenerateResource.cache
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\BeyabBot\obj\Debug\BeyabBot.csproj.CoreCompileInputs.cache
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\BeyabBot\obj\Debug\BeyabBot.exe
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\BeyabBot\obj\Debug\BeyabBot.pdb
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\BeyabBot\bin\Debug\BeyabBot.exe.config
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\BeyabBot\bin\Debug\BeyabBot.exe.manifest
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\BeyabBot\bin\Debug\BeyabBot.application
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\BeyabBot\bin\Debug\BeyabBot.exe
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\BeyabBot\bin\Debug\BeyabBot.pdb
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\BeyabBot\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\BeyabBot\bin\Debug\EntityFramework.dll
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\BeyabBot\bin\Debug\JetBrains.Annotations.dll
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\BeyabBot\bin\Debug\DataLayer.dll
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\BeyabBot\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\BeyabBot\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\BeyabBot\bin\Debug\Telegram.Bot.dll
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\BeyabBot\bin\Debug\DataLayer.pdb
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\BeyabBot\bin\Debug\Telegram.Bot.xml
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\BeyabBot\obj\Debug\BeyabBot.exe.manifest
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\BeyabBot\obj\Debug\BeyabBot.application
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\BeyabBot\obj\Debug\BeyabBot.csproj.Up2Date
