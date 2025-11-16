@@ -1,8 +1,7 @@
-﻿
-namespace BeyabBot
+﻿namespace BeyabBot
 {
     partial class Form1
-    {
+    {   
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -29,238 +28,235 @@ namespace BeyabBot
         /// </summary>
         private void InitializeComponent()
         {
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btnSend = new System.Windows.Forms.Button();
-            this.txtToken = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.DG = new System.Windows.Forms.DataGridView();
-            this.C1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.C2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.C3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.C4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtText = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtPhoto = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnSentmsg = new System.Windows.Forms.Button();
-            this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DG)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabelStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnApply = new System.Windows.Forms.Button();
+            this.txtBotToken = new System.Windows.Forms.TextBox();
+            this.lblToken = new System.Windows.Forms.Label();
+            this.dgvUsers = new System.Windows.Forms.DataGridView();
+            this.colIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colChatId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUsername = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUser2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grpManagement = new System.Windows.Forms.GroupBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.lblUserCount = new System.Windows.Forms.Label();
+            this.grpMessage = new System.Windows.Forms.GroupBox();
+            this.txtMessage = new System.Windows.Forms.TextBox();
+            this.lblPhoto = new System.Windows.Forms.Label();
+            this.txtPhotoPath = new System.Windows.Forms.TextBox();
+            this.btnBrowsePhoto = new System.Windows.Forms.Button();
+            this.btnSendMessage = new System.Windows.Forms.Button();
+            this.statusStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
+            this.grpManagement.SuspendLayout();
+            this.grpMessage.SuspendLayout();
             this.SuspendLayout();
             // 
-            // statusStrip1
+            // statusStrip
             // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 674);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(875, 26);
-            this.statusStrip1.TabIndex = 0;
-            this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabelStatus});
+            this.statusStrip.Location = new System.Drawing.Point(0, 674);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(875, 26);
+            this.statusStrip.TabIndex = 0;
+            this.statusStrip.Text = "statusStrip";
             // 
-            // toolStripStatusLabel1
+            // toolStripStatusLabelStatus
             // 
-            this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.Red;
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(45, 20);
-            this.toolStripStatusLabel1.Text = "آفلاین";
+            this.toolStripStatusLabelStatus.ForeColor = System.Drawing.Color.Red;
+            this.toolStripStatusLabelStatus.Name = "toolStripStatusLabelStatus";
+            this.toolStripStatusLabelStatus.Size = new System.Drawing.Size(45, 20);
+            this.toolStripStatusLabelStatus.Text = "آفلاین";
             // 
-            // btnSend
+            // btnApply
             // 
-            this.btnSend.Location = new System.Drawing.Point(10, 13);
-            this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(105, 35);
-            this.btnSend.TabIndex = 5;
-            this.btnSend.Text = "انجام";
-            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnApply.Location = new System.Drawing.Point(10, 13);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(105, 35);
+            this.btnApply.TabIndex = 5;
+            this.btnApply.Text = "انجام";
+            this.btnApply.UseVisualStyleBackColor = true;
             // 
-            // txtToken
+            // txtBotToken
             // 
-            this.txtToken.Location = new System.Drawing.Point(121, 21);
-            this.txtToken.Name = "txtToken";
-            this.txtToken.Size = new System.Drawing.Size(696, 22);
-            this.txtToken.TabIndex = 4;
+            this.txtBotToken.Location = new System.Drawing.Point(121, 21);
+            this.txtBotToken.Name = "txtBotToken";
+            this.txtBotToken.Size = new System.Drawing.Size(696, 22);
+            this.txtBotToken.TabIndex = 4;
             // 
-            // label1
+            // lblToken
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(823, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "توکن :";
+            this.lblToken.AutoSize = true;
+            this.lblToken.Location = new System.Drawing.Point(823, 22);
+            this.lblToken.Name = "lblToken";
+            this.lblToken.Size = new System.Drawing.Size(38, 17);
+            this.lblToken.TabIndex = 3;
+            this.lblToken.Text = "توکن :";
             // 
-            // DG
+            // dgvUsers
             // 
-            this.DG.AllowUserToAddRows = false;
-            this.DG.AllowUserToDeleteRows = false;
-            this.DG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.C1,
-            this.C2,
-            this.C3,
-            this.C4});
-            this.DG.Location = new System.Drawing.Point(10, 68);
-            this.DG.Name = "DG";
-            this.DG.ReadOnly = true;
-            this.DG.RowHeadersWidth = 51;
-            this.DG.RowTemplate.Height = 24;
-            this.DG.Size = new System.Drawing.Size(848, 347);
-            this.DG.TabIndex = 6;
+            this.dgvUsers.AllowUserToAddRows = false;
+            this.dgvUsers.AllowUserToDeleteRows = false;
+            this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colIndex,
+            this.colChatId,
+            this.colUsername,
+            this.colUser2});
+            this.dgvUsers.Location = new System.Drawing.Point(10, 68);
+            this.dgvUsers.Name = "dgvUsers";
+            this.dgvUsers.ReadOnly = true;
+            this.dgvUsers.RowHeadersWidth = 51;
+            this.dgvUsers.RowTemplate.Height = 24;
+            this.dgvUsers.Size = new System.Drawing.Size(848, 347);
+            this.dgvUsers.TabIndex = 6;
             // 
-            // C1
+            // colIndex
             // 
-            this.C1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.C1.HeaderText = "#";
-            this.C1.MinimumWidth = 6;
-            this.C1.Name = "C1";
-            this.C1.ReadOnly = true;
+            this.colIndex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colIndex.HeaderText = "#";
+            this.colIndex.MinimumWidth = 6;
+            this.colIndex.Name = "colIndex";
+            this.colIndex.ReadOnly = true;
             // 
-            // C2
+            // colChatId
             // 
-            this.C2.HeaderText = "ChatID";
-            this.C2.MinimumWidth = 6;
-            this.C2.Name = "C2";
-            this.C2.ReadOnly = true;
-            this.C2.Width = 125;
+            this.colChatId.HeaderText = "ChatID";
+            this.colChatId.MinimumWidth = 6;
+            this.colChatId.Name = "colChatId";
+            this.colChatId.ReadOnly = true;
+            this.colChatId.Width = 125;
             // 
-            // C3
+            // colUsername
             // 
-            this.C3.HeaderText = "Username";
-            this.C3.MinimumWidth = 6;
-            this.C3.Name = "C3";
-            this.C3.ReadOnly = true;
-            this.C3.Width = 125;
+            this.colUsername.HeaderText = "Username";
+            this.colUsername.MinimumWidth = 6;
+            this.colUsername.Name = "colUsername";
+            this.colUsername.ReadOnly = true;
+            this.colUsername.Width = 125;
             // 
-            // C4
+            // colUser2
             // 
-            this.C4.HeaderText = "User2";
-            this.C4.MinimumWidth = 6;
-            this.C4.Name = "C4";
-            this.C4.ReadOnly = true;
-            this.C4.Width = 125;
+            this.colUser2.HeaderText = "User2";
+            this.colUser2.MinimumWidth = 6;
+            this.colUser2.Name = "colUser2";
+            this.colUser2.ReadOnly = true;
+            this.colUser2.Width = 125;
             // 
-            // groupBox1
+            // grpManagement
             // 
-            this.groupBox1.Controls.Add(this.txtToken);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.btnSend);
-            this.groupBox1.Location = new System.Drawing.Point(0, 7);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(875, 55);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "مدیریت";
+            this.grpManagement.Controls.Add(this.txtBotToken);
+            this.grpManagement.Controls.Add(this.lblToken);
+            this.grpManagement.Controls.Add(this.btnApply);
+            this.grpManagement.Location = new System.Drawing.Point(0, 7);
+            this.grpManagement.Name = "grpManagement";
+            this.grpManagement.Size = new System.Drawing.Size(875, 55);
+            this.grpManagement.TabIndex = 7;
+            this.grpManagement.TabStop = false;
+            this.grpManagement.Text = "مدیریت";
             // 
-            // button1
+            // btnRefresh
             // 
-            this.button1.Location = new System.Drawing.Point(12, 421);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Refresh";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnRefresh.Location = new System.Drawing.Point(12, 421);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 8;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // lblUserCount
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(150, 424);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 17);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "تعداد کاربران :";
+            this.lblUserCount.AutoSize = true;
+            this.lblUserCount.Location = new System.Drawing.Point(150, 424);
+            this.lblUserCount.Name = "lblUserCount";
+            this.lblUserCount.Size = new System.Drawing.Size(77, 17);
+            this.lblUserCount.TabIndex = 9;
+            this.lblUserCount.Text = "تعداد کاربران :";
             // 
-            // groupBox2
+            // grpMessage
             // 
-            this.groupBox2.Controls.Add(this.btnSentmsg);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.txtPhoto);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.txtText);
-            this.groupBox2.Location = new System.Drawing.Point(11, 450);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(852, 208);
-            this.groupBox2.TabIndex = 10;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "پیغام";
+            this.grpMessage.Controls.Add(this.btnSendMessage);
+            this.grpMessage.Controls.Add(this.btnBrowsePhoto);
+            this.grpMessage.Controls.Add(this.txtPhotoPath);
+            this.grpMessage.Controls.Add(this.lblPhoto);
+            this.grpMessage.Controls.Add(this.txtMessage);
+            this.grpMessage.Location = new System.Drawing.Point(11, 450);
+            this.grpMessage.Name = "grpMessage";
+            this.grpMessage.Size = new System.Drawing.Size(852, 208);
+            this.grpMessage.TabIndex = 10;
+            this.grpMessage.TabStop = false;
+            this.grpMessage.Text = "پیغام";
             // 
-            // txtText
+            // txtMessage
             // 
-            this.txtText.Location = new System.Drawing.Point(482, 21);
-            this.txtText.Multiline = true;
-            this.txtText.Name = "txtText";
-            this.txtText.Size = new System.Drawing.Size(364, 178);
-            this.txtText.TabIndex = 0;
+            this.txtMessage.Location = new System.Drawing.Point(482, 21);
+            this.txtMessage.Multiline = true;
+            this.txtMessage.Name = "txtMessage";
+            this.txtMessage.Size = new System.Drawing.Size(364, 178);
+            this.txtMessage.TabIndex = 0;
             // 
-            // label3
+            // lblPhoto
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(429, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 17);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "عکس :";
+            this.lblPhoto.AutoSize = true;
+            this.lblPhoto.Location = new System.Drawing.Point(429, 24);
+            this.lblPhoto.Name = "lblPhoto";
+            this.lblPhoto.Size = new System.Drawing.Size(42, 17);
+            this.lblPhoto.TabIndex = 1;
+            this.lblPhoto.Text = "عکس :";
             // 
-            // txtPhoto
+            // txtPhotoPath
             // 
-            this.txtPhoto.Location = new System.Drawing.Point(47, 21);
-            this.txtPhoto.Name = "txtPhoto";
-            this.txtPhoto.Size = new System.Drawing.Size(376, 22);
-            this.txtPhoto.TabIndex = 2;
+            this.txtPhotoPath.Location = new System.Drawing.Point(47, 21);
+            this.txtPhotoPath.Name = "txtPhotoPath";
+            this.txtPhotoPath.Size = new System.Drawing.Size(376, 22);
+            this.txtPhotoPath.TabIndex = 2;
             // 
-            // button2
+            // btnBrowsePhoto
             // 
-            this.button2.Location = new System.Drawing.Point(13, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(28, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "...";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnBrowsePhoto.Location = new System.Drawing.Point(13, 21);
+            this.btnBrowsePhoto.Name = "btnBrowsePhoto";
+            this.btnBrowsePhoto.Size = new System.Drawing.Size(28, 23);
+            this.btnBrowsePhoto.TabIndex = 3;
+            this.btnBrowsePhoto.Text = "...";
+            this.btnBrowsePhoto.UseVisualStyleBackColor = true;
             // 
-            // btnSentmsg
+            // btnSendMessage
             // 
-            this.btnSentmsg.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnSentmsg.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSentmsg.Location = new System.Drawing.Point(13, 175);
-            this.btnSentmsg.Name = "btnSentmsg";
-            this.btnSentmsg.Size = new System.Drawing.Size(455, 24);
-            this.btnSentmsg.TabIndex = 4;
-            this.btnSentmsg.Text = "ارسال";
-            this.btnSentmsg.UseVisualStyleBackColor = false;
-            this.btnSentmsg.Click += new System.EventHandler(this.btnSentmsg_Click);
+            this.btnSendMessage.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnSendMessage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSendMessage.Location = new System.Drawing.Point(13, 175);
+            this.btnSendMessage.Name = "btnSendMessage";
+            this.btnSendMessage.Size = new System.Drawing.Size(455, 24);
+            this.btnSendMessage.TabIndex = 4;
+            this.btnSendMessage.Text = "ارسال";
+            this.btnSendMessage.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(875, 700);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.DG);
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.grpMessage);
+            this.Controls.Add(this.lblUserCount);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.grpManagement);
+            this.Controls.Add(this.dgvUsers);
+            this.Controls.Add(this.statusStrip);
             this.Name = "Form1";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DG)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
+            this.grpManagement.ResumeLayout(false);
+            this.grpManagement.PerformLayout();
+            this.grpMessage.ResumeLayout(false);
+            this.grpMessage.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,25 +264,25 @@ namespace BeyabBot
 
         #endregion
 
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.Button btnSend;
-        private System.Windows.Forms.TextBox txtToken;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView DG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn C1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn C2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn C3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn C4;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnSentmsg;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox txtPhoto;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtText;
+        private System.Windows.Forms.StatusStrip statusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelStatus;
+        private System.Windows.Forms.Button btnApply;
+        private System.Windows.Forms.TextBox txtBotToken;
+        private System.Windows.Forms.Label lblToken;
+        private System.Windows.Forms.DataGridView dgvUsers;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIndex;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colChatId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUsername;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUser2;
+        private System.Windows.Forms.GroupBox grpManagement;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Label lblUserCount;
+        private System.Windows.Forms.GroupBox grpMessage;
+        private System.Windows.Forms.Button btnSendMessage;
+        private System.Windows.Forms.Button btnBrowsePhoto;
+        private System.Windows.Forms.TextBox txtPhotoPath;
+        private System.Windows.Forms.Label lblPhoto;
+        private System.Windows.Forms.TextBox txtMessage;
     }
 }
 

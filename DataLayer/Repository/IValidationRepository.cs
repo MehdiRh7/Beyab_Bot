@@ -13,6 +13,6 @@ namespace DataLayer
         bool DeleteValidation(int validationId);
         bool DeleteValidation(RequestValidation validation);
         bool UpdateValidation(RequestValidation validation);
-        void Save();
+        Task Save();
     }
 }

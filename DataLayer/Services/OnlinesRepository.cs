@@ -14,9 +14,9 @@ namespace DataLayer
         {
             this.db = context;
         }
-        public IEnumerable<Onlines> GetAllOnlines()
+        public IQueryable<Onlines> GetAllOnlines()
         {
-            return db.Onlines.ToList();
+            return db.Onlines.AsQueryable();
         }
 
         public Onlines GetOnlineById(int id)
@@ -76,9 +76,9 @@ namespace DataLayer
             }
         }
 
-        public void Save()
+        public async Task Save()
         {
-            db.SaveChanges();
+            await db.SaveChangesAsync();
         }
 
         public void Dispose()

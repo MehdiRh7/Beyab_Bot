@@ -72,9 +72,9 @@ namespace DataLayer
             }
         }
 
-        public void Save()
+        public async Task Save()
         {
-            db.SaveChanges();
+            await db.SaveChangesAsync();
         }
 
         public void Dispose()

@@ -28,3 +28,21 @@ D:\Beyab\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileInputs.cache
 D:\Beyab\DataLayer\obj\Debug\DataLayer.csproj.Up2Date
 D:\Beyab\DataLayer\obj\Debug\DataLayer.dll
 D:\Beyab\DataLayer\obj\Debug\DataLayer.pdb
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\DataLayer\bin\Debug\DataLayer.dll
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\DataLayer\bin\Debug\DataLayer.pdb
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\DataLayer\bin\Debug\EntityFramework.dll
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\DataLayer\bin\Debug\JetBrains.Annotations.dll
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\DataLayer\bin\Debug\Telegram.Bot.dll
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\DataLayer\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\DataLayer\bin\Debug\Telegram.Bot.xml
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\DataLayer\obj\Debug\DataLayer.csproj.AssemblyReference.cache
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\DataLayer\obj\Debug\DataLayer.Migrations.create2.resources
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\DataLayer\obj\Debug\DataLayer.Migrations.create3.resources
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\DataLayer\obj\Debug\DataLayer.Migrations.create4.resources
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\DataLayer\obj\Debug\DataLayer.Migrations.create5.resources
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\DataLayer\obj\Debug\DataLayer.csproj.GenerateResource.cache
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\DataLayer\obj\Debug\DataLayer.csproj.Up2Date
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\DataLayer\obj\Debug\DataLayer.dll
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\DataLayer\obj\Debug\DataLayer.pdb

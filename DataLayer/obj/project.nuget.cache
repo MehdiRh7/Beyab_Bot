@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "qb0gsvh9WwYpCRlSbjPaWEtl7hUSP16oIqAMrpioOS+f4kWVBfA0xiDfikWcwTZqzIaiqNIOLryd3BCxSy+BGA==",
+  "dgSpecHash": "ddMxunUd6Yg=",
   "success": true,
-  "projectFilePath": "D:\\Beyab\\DataLayer\\DataLayer.csproj",
+  "projectFilePath": "C:\\Users\\Mehdi Rh\\source\\repos\\Beyab_Bot\\Beyab_Bot\\DataLayer\\DataLayer.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Stocknew1\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
-    "C:\\Users\\Stocknew1\\.nuget\\packages\\jetbrains.annotations\\2022.1.0\\jetbrains.annotations.2022.1.0.nupkg.sha512"
+    "C:\\Users\\Mehdi Rh\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\Mehdi Rh\\.nuget\\packages\\jetbrains.annotations\\2022.1.0\\jetbrains.annotations.2022.1.0.nupkg.sha512"
   ],
   "logs": []
 }

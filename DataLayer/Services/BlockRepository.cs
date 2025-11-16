@@ -14,9 +14,9 @@ namespace DataLayer
         {
             this.db = context;
         }
-        public IEnumerable<BlockList> GetAllBlockList()
+        public IQueryable<BlockList> GetAllBlockList()
         {
-            return db.BlockLists.ToList();
+            return db.BlockLists.AsQueryable();
         }
 
         public bool InsertBlock(BlockList block)
@@ -71,9 +71,9 @@ namespace DataLayer
             }
         }
 
-        public void Save()
+        public async Task Save()
         {
-            db.SaveChanges();
+            await db.SaveChangesAsync();
         }
 
         public void Dispose()

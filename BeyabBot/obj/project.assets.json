@@ -371,20 +371,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Stocknew1\\.nuget\\packages\\": {}
+    "C:\\Users\\Mehdi Rh\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Beyab\\BeyabBot\\BeyabBot.csproj",
+      "projectUniqueName": "C:\\Users\\Mehdi Rh\\source\\repos\\Beyab_Bot\\Beyab_Bot\\BeyabBot\\BeyabBot.csproj",
       "projectName": "BeyabBot",
-      "projectPath": "D:\\Beyab\\BeyabBot\\BeyabBot.csproj",
-      "packagesPath": "C:\\Users\\Stocknew1\\.nuget\\packages\\",
-      "outputPath": "D:\\Beyab\\BeyabBot\\obj\\",
+      "projectPath": "C:\\Users\\Mehdi Rh\\source\\repos\\Beyab_Bot\\Beyab_Bot\\BeyabBot\\BeyabBot.csproj",
+      "packagesPath": "C:\\Users\\Mehdi Rh\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mehdi Rh\\source\\repos\\Beyab_Bot\\Beyab_Bot\\BeyabBot\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
+      "UsingMicrosoftNETSdk": false,
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Stocknew1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Mehdi Rh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -397,8 +403,8 @@
       "frameworks": {
         "net472": {
           "projectReferences": {
-            "D:\\Beyab\\DataLayer\\DataLayer.csproj": {
-              "projectPath": "D:\\Beyab\\DataLayer\\DataLayer.csproj"
+            "C:\\Users\\Mehdi Rh\\source\\repos\\Beyab_Bot\\Beyab_Bot\\DataLayer\\DataLayer.csproj": {
+              "projectPath": "C:\\Users\\Mehdi Rh\\source\\repos\\Beyab_Bot\\Beyab_Bot\\DataLayer\\DataLayer.csproj"
             }
           }
         }

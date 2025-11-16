@@ -8,11 +8,11 @@ namespace DataLayer
 {
     public interface IBlockRepository:IDisposable
     {
-        IEnumerable<BlockList> GetAllBlockList();
+        IQueryable<BlockList> GetAllBlockList();
         bool InsertBlock(BlockList block);
         bool DeleteBlock(int blockID);
         bool DeleteBlock(BlockList block);
         bool UpdateBlock(BlockList block);
-        void Save();
+        Task Save();
     }
 }

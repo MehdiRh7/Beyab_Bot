@@ -1,0 +1,7 @@
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\DataLayer\obj\Release\DataLayer.csproj.AssemblyReference.cache
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\DataLayer\obj\Release\DataLayer.Migrations.create2.resources
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\DataLayer\obj\Release\DataLayer.Migrations.create3.resources
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\DataLayer\obj\Release\DataLayer.Migrations.create4.resources
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\DataLayer\obj\Release\DataLayer.Migrations.create5.resources
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\DataLayer\obj\Release\DataLayer.csproj.GenerateResource.cache
+C:\Users\Mehdi Rh\source\repos\Beyab_Bot\Beyab_Bot\DataLayer\obj\Release\DataLayer.csproj.CoreCompileInputs.cache

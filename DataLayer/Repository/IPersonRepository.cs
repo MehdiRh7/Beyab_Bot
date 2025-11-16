@@ -8,13 +8,13 @@ namespace DataLayer
 {
     public interface IPersonRepository:IDisposable
     {
-        IEnumerable<Person> GetAllPerson();
+        IQueryable<Person> GetAllPerson();
         Person GetPersonById(int id);
         bool InsertPerson(Person person);
         bool DeletePerson(Person person);
         bool DeletePerson(int id); 
         bool UpdatePerson(Person person);
-        void Save();
+        Task Save();
 
     }
 }

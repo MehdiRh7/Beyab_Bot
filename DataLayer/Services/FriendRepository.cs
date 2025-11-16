@@ -14,9 +14,9 @@ namespace DataLayer
         {
             this.db = context;
         }
-        public IEnumerable<FriendsList> GetAllFriendList()
+        public IQueryable<FriendsList> GetAllFriendList()
         {
-            return db.FriendsLists.ToList();
+            return db.FriendsLists.AsQueryable();
         }
 
         public bool InsertFriend(FriendsList friend)
@@ -72,9 +72,9 @@ namespace DataLayer
             }
         }
 
-        public void Save()
+        public async Task Save()
         {
-            db.SaveChanges();
+            await db.SaveChangesAsync();
         }
 
         public void Dispose()
