@@ -38,7 +38,7 @@ namespace BeyabBot
         {
             _keyboardProvider = new KeyboardProvider();
 
-            var messageHandler = new MessageHandler(_personRepository, _onlinesRepository, _validationRepository, _keyboardProvider);
+            var messageHandler = new MessageHandler(_personRepository, _onlinesRepository, _validationRepository, _keyboardProvider,_friendRepository);
             var callbackHandler = new CallbackHandler(_personRepository, _friendRepository, _onlinesRepository, _blockRepository, _validationRepository, _keyboardProvider);
 
             _botRunner = new BotRunner(Token, messageHandler, callbackHandler);

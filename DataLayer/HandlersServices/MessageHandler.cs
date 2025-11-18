@@ -17,16 +17,18 @@ namespace DataLayer.HandlersServices
     {
         private readonly IPersonRepository _personRepository;
         private readonly IOnlinesRepository _onlinesRepository;
+        private readonly IFriendRepository _friendRepository;
         private readonly IValidationRepository _validationRepository;
         private readonly KeyboardProvider _keyboardProvider;
 
-        public MessageHandler(IPersonRepository personRepository, IOnlinesRepository onlinesRepository, IValidationRepository validationRepository, KeyboardProvider keyboardProvider)
+        public MessageHandler(IPersonRepository personRepository, IOnlinesRepository onlinesRepository, IValidationRepository validationRepository, KeyboardProvider keyboardProvider, IFriendRepository friendRepository)
         {
             _personRepository = personRepository ?? throw new ArgumentNullException(nameof(personRepository));
             _onlinesRepository = onlinesRepository ?? throw new ArgumentNullException(nameof(onlinesRepository));
             _validation_repository_check(validationRepository);
             _validationRepository = validationRepository;
             _keyboardProvider = keyboardProvider ?? throw new ArgumentNullException(nameof(keyboardProvider));
+            _friendRepository = friendRepository;
         }
 
         // small no-op to keep constructor compatible with some styles
@@ -105,18 +107,223 @@ namespace DataLayer.HandlersServices
                 await HandleGenderSelectionAsync(chatId, bot, me,text).ConfigureAwait(false);
                 return;
             }
+            if (text == "اتمام صحبت")
+            {
+                if (me != null)
+                {
+                    if (me.CommandName == "StopKeyboard")
+                    {
+                        me.CommandName = "BeCancelledKeyboard";
+                        _personRepository.UpdatePerson(me);
+                        await _personRepository.Save().ConfigureAwait(false);
 
+                        var sbBC = new StringBuilder();
+                        sbBC.AppendLine("<b>آیا مطمئنی میخوای صحبت رو ببندی؟\U0001F628</b>");
+                        await bot.SendTextMessageAsync(chatId, sbBC.ToString(), ParseMode.Html, replyMarkup: _keyboardProvider.BeCancelledKeyboard).ConfigureAwait(false);
+                        return;
+                    }
+
+                    if (me.CommandName == "CancellKeyboard")
+                    {
+                        var sbRepeat = new StringBuilder();
+                        sbRepeat.AppendLine("<b>داریم یه هم صحبت برات پیدا میکنیم\U0001F50D</b>");
+                        sbRepeat.AppendLine("<b>پیدا کردن هم صحبت ممکنه چند دقیقه ای زمان ببره ، لطفا صبور باشید.</b>");
+                        // show cancell keyboard
+                        await bot.SendTextMessageAsync(chatId, sbRepeat.ToString(), ParseMode.Html, replyMarkup: _keyboardProvider.CancellKeyboard).ConfigureAwait(false);
+                        return;
+                    }
+
+                    if (me.CommandName == "ComeBackKeyboard")
+                    {
+                        // This branch expects user's message to be the new friend name
+                        var friends = _friendRepository.GetAllFriendList().Where(f => f.P1Chatid == chatId).ToList();
+
+                        // if there is no friend with P2Chatid == me.LastUser, we are adding a new friend
+                        if (!friends.Any(f => f.P2Chatid == me.LastUser))
+                        {
+                            // validate name uniqueness
+                            if (!friends.Any(f => f.name == text))
+                            {
+                                if (friends.Count == 1)
+                                {
+                                    // update single existing friend
+                                    var friend = friends.Single();
+                                    friend.P2Chatid = me.LastUser;
+                                    friend.name = text;
+                                    _friendRepository.UpdateFriend(friend);
+                                    await _friendRepository.Save().ConfigureAwait(false);
+                                }
+                                else
+                                {
+                                    var fr = new FriendsList()
+                                    {
+                                        P1Chatid = chatId,
+                                        P2Chatid = me.LastUser,
+                                        name = text,
+                                        PersonId = me.PersonId
+                                    };
+                                    _friendRepository.InsertFriend(fr);
+                                    await _friendRepository.Save().ConfigureAwait(false);
+                                }
+
+                                me.CommandName = "SearchKeyboard";
+                                _personRepository.UpdatePerson(me);
+                                await _personRepository.Save().ConfigureAwait(false);
+
+                                var sbtext = new StringBuilder();
+                                sbtext.AppendLine("<b>کاربر با موفقیت به لیست دوستات اضافه شد\U00002705</b>");
+                                sbtext.AppendLine("<b>خب حالا چه کاری برات انجام بدم؟</b>");
+                                await bot.SendTextMessageAsync(chatId, sbtext.ToString(), ParseMode.Html, replyMarkup: _keyboardProvider.SearchKeyboard).ConfigureAwait(false);
+                            }
+                            else
+                            {
+                                var sbtext = new StringBuilder();
+                                sbtext.AppendLine("<b>کاربر گرامی متاسفانه این اسم رو قبلا برای دوست دیگه ای انتخاب کردی لطفا یه اسم دیگه مشخض کن\U0001F64F</b>");
+                                await bot.SendTextMessageAsync(chatId, sbtext.ToString(), ParseMode.Html, replyMarkup: _keyboard_provider_safe(_keyboardProvider.ComeBackKeyboard)).ConfigureAwait(false);
+                            }
+                        }
+                        else
+                        {
+                            // friend exists: update its name
+                            foreach (var fr in friends.Where(f => f.P2Chatid == me.LastUser))
+                            {
+                                fr.name = text;
+                                _friendRepository.UpdateFriend(fr);
+                                await _friendRepository.Save().ConfigureAwait(false);
+
+                                me.CommandName = "SearchKeyboard";
+                                _personRepository.UpdatePerson(me);
+                                await _personRepository.Save().ConfigureAwait(false);
+
+                                var sbtext = new StringBuilder();
+                                sbtext.AppendLine("<b>نام دوستت با موفقیت تغییر کرد\U00002705</b>");
+                                await bot.SendTextMessageAsync(chatId, sbtext.ToString(), ParseMode.Html, replyMarkup: _keyboardProvider.SearchKeyboard).ConfigureAwait(false);
+                            }
+                        }
+
+                        return;
+                    }
+
+                    // fallback
+                    var sbUnknown = new StringBuilder();
+                    sbUnknown.AppendLine("<b>متوجه نشدم!</b>");
+                    sbUnknown.AppendLine("<b>لطفا از گزینه های زیر استفاده کنید</b>");
+                    await bot.SendTextMessageAsync(chatId, sbUnknown.ToString(), ParseMode.Html, replyMarkup: _keyboardProvider.MainKeyboard).ConfigureAwait(false);
+                }
+
+                return;
+            }
+            if (text == "اتمام")
+            {
+                if (me == null) return;
+
+                if (me.CommandName != "BeCancelledKeyboard")
+                {
+                    // Not in expected state - show state keyboard
+                    await SendStatePromptAsync(chatId, bot, me).ConfigureAwait(false);
+                    return;
+                }
+
+                try
+                {
+                    // Mark person as AfterCancelledKeyboard
+                    me.CommandName = "AfterCancelledKeyboard";
+                    _personRepository.UpdatePerson(me);
+                    await _personRepository.Save().ConfigureAwait(false);
+
+                    // Find online entries for this person
+                    var onlines = _onlinesRepository.GetAllOnlines().ToList();
+
+                    long chatid1 = chatId;
+                    long chatid2 = chatId;
+
+                    // Delete onlines belonging to this person
+                    var myOnlines = onlines.Where(o => o.PersonId == me.PersonId).ToList();
+                    foreach (var o in myOnlines)
+                    {
+                        chatid1 = o.chatid;
+                        _onlinesRepository.DeleteOnline(o);
+                    }
+
+                    // Find partner entries where this person was User2 (i.e., partner.User2 == me.chatid)
+                    var partnerOnlineEntries = onlines.Where(o => o.User2 == me.chatid).ToList();
+                    foreach (var o in partnerOnlineEntries)
+                    {
+                        // set partner's person state to SearchKeyboard and LastUser
+                        var partnerPerson = o.Person;
+                        if (partnerPerson != null)
+                        {
+                            partnerPerson.CommandName = "SearchKeyboard";
+                            partnerPerson.LastUser = chatId;
+                            _personRepository.UpdatePerson(partnerPerson);
+                            await _personRepository.Save().ConfigureAwait(false);
+
+                            chatid2 = o.chatid;
+                        }
+
+                        // delete partner's online row
+                        _onlinesRepository.DeleteOnline(o);
+                    }
+
+                    // Persist deletions
+                    await _onlines_repository_save_safe().ConfigureAwait(false);
+
+                    // Notify both sides
+                    var sb1 = new StringBuilder();
+                    sb1.AppendLine("<b>صحبت رو قطع کردی حالا چه کاری برات انجام بدم؟😆</b>");
+                    await bot.SendTextMessageAsync(chatid1, sb1.ToString(), ParseMode.Html, replyMarkup: _keyboardProvider.AfterCancelledKeyboard).ConfigureAwait(false);
+
+                    var sb2 = new StringBuilder();
+                    sb2.AppendLine("<b>کاربر از چت خارج شد حالا چه کاری برات انجام بدم؟</b>");
+                    await bot.SendTextMessageAsync(chatid2, sb2.ToString(), ParseMode.Html, replyMarkup: _keyboardProvider.SearchKeyboard).ConfigureAwait(false);
+                }
+                catch (Exception ex)
+                {
+                    // In original code there was a DB transaction; here we do best-effort and log
+                    Console.WriteLine($"Error finishing conversation: {ex.Message}");
+                }
+
+                return;
+            }
+            if (text == "ادامه صحبت")
+            {
+                if (me != null && me.CommandName == "BeCancelledKeyboard")
+                {
+                    var sb = new StringBuilder();
+                    sb.AppendLine("<b>شما در حال چت با هم صحبت خود هستید\U0001F60A</b>");
+                    await bot.SendTextMessageAsync(chatId, sb.ToString(), ParseMode.Html, replyMarkup: _keyboardProvider.StopKeyboard).ConfigureAwait(false);
+
+                    me.CommandName = "StopKeyboard";
+                    _personRepository.UpdatePerson(me);
+                    await _personRepository.Save().ConfigureAwait(false);
+                }
+                else if (me != null)
+                {
+                    await SendStatePromptAsync(chatId, bot, me).ConfigureAwait(false);
+                }
+
+                return;
+            }
             // If chatting (StopKeyboard) forward text to partner
             if (me != null && me.CommandName == "StopKeyboard")
             {
                 await ForwardTextToPartnerAsync(chatId, bot, update).ConfigureAwait(false);
                 return;
             }
-
+            
             // Default fallback: prompt with the correct keyboard according to state
             await SendStatePromptAsync(chatId, bot, me).ConfigureAwait(false);
         }
+        private ReplyKeyboardMarkup _keyboard_provider_safe(ReplyKeyboardMarkup kb)
+        {
+            return kb ?? new ReplyKeyboardMarkup() { ResizeKeyboard = true };
+        }
 
+        private async Task _onlines_repository_save_safe()
+        {
+            try { await _onlinesRepository.Save().ConfigureAwait(false); }
+            catch { /* ignore */ }
+        }
         private async Task HandleStartAsync(Update update, TelegramBotClient bot, Person me)
         {
             var chatId = update.Message.Chat.Id;
@@ -196,7 +403,7 @@ namespace DataLayer.HandlersServices
             else if (me.CommandName == "GenderFilterKeyboard")
             {
                 // This branch is used when user is setting a city filter
-                me.FilterGender = text;
+                me.FilterGender = text == "پسر باشه" + " \U0001F466" ? "پسر" : "دختر";
                 me.CommandName = "CityFilterKeyboard";
                 _personRepository.UpdatePerson(me);
                 await _personRepository.Save().ConfigureAwait(false);
@@ -209,7 +416,7 @@ namespace DataLayer.HandlersServices
                 if (!string.IsNullOrEmpty(me.PersonGender))
                 {
                     await EnsureOnlinesRecordAsync(me).ConfigureAwait(false);
-                    await TryMatchmakeAsync(me, bot).ConfigureAwait(false);
+                    //await TryMatchmakeAsync(me, bot).ConfigureAwait(false);
                 }
             }
             else
@@ -246,11 +453,11 @@ namespace DataLayer.HandlersServices
                 await bot.SendTextMessageAsync(chatId, sb.ToString(), ParseMode.Html, replyMarkup: _keyboardProvider.AgeFilterKeyboard).ConfigureAwait(false);
 
                 // in case of filter change, automatically try to matchmaking if already registered
-                if (!string.IsNullOrEmpty(me.PersonGender) && !string.IsNullOrEmpty(me.PersonAge))
-                {
-                    await EnsureOnlinesRecordAsync(me).ConfigureAwait(false);
-                    await TryMatchmakeAsync(me, bot).ConfigureAwait(false);
-                }
+                //if (!string.IsNullOrEmpty(me.PersonGender) && !string.IsNullOrEmpty(me.PersonAge))
+                //{
+                //    await EnsureOnlinesRecordAsync(me).ConfigureAwait(false);
+                //    await TryMatchmakeAsync(me, bot).ConfigureAwait(false);
+                //}
             }
             else
             {
@@ -329,7 +536,7 @@ namespace DataLayer.HandlersServices
             sb.AppendLine("<b>هم صحبتت پسر باشه یا دختر باشه؟\U00002049</b>");
             await bot.SendTextMessageAsync(chatId, sb.ToString(), ParseMode.Html, replyMarkup: _keyboardProvider.GenderFilterKeyboard).ConfigureAwait(false);
 
-            await TryMatchmakeAsync(me, bot).ConfigureAwait(false);
+            //await TryMatchmakeAsync(me, bot).ConfigureAwait(false);
         }
 
         private async Task EnsureOnlinesRecordAsync(Person me)
